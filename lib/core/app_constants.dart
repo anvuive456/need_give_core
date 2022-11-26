@@ -3,12 +3,6 @@ class PrefKey {
 }
 
 
-
-enum StateStatus { init, loading, success, failure }
-
-enum AuthStatus { authorized, unAuthorized }
-
-
 // const phoneConstants = [
 //   {
 //     ''
