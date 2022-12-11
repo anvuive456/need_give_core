@@ -20,5 +20,26 @@ void setBaseUrl(String baseUrl) {
 
 void initInterceptors() async{
   var pref = await SharedPreferences.getInstance();
-  dio.interceptors.add(AuthInterceptor(pref));
+  String token = pref.getString(PrefKey.PREF_ACCESS_TOKEN)??'';
+  dio.interceptors.add(InterceptorsWrapper(
+      onRequest: (RequestOptions options,RequestInterceptorHandler handler) {
+        options.headers["Authorization"] = "Bearer ${token}"  ;
+        return handler.next(options);
+      }, onResponse: (Response response,ResponseInterceptorHandler handler) {
+    return handler.next(response);
+  }, onError: (DioError error,ErrorInterceptorHandler handler) async {
+    RequestOptions origin = error.response!.requestOptions;
+    if (error.response?.statusCode == 401) {
+      // try {
+      //   Response<dynamic> data = await dio.get("your_refresh_url");
+      //   token = data.data['newToken'];
+      //   _customSharedPreferences.setToken(data.data['newToken']);
+      //   origin.headers["Authorization"] = "Bearer " + data.data['newToken'];
+      //   return dio.request(origin.path, options: origin);
+      // } catch (err) {
+      //   return err;
+      // }
+    }
+    return handler.next(error);
+  }));
 }
