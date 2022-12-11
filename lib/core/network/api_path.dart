@@ -12,4 +12,5 @@ class ApiPath {
   static const String sign_up = BASE_URL + API + V + '/auth/sign-up';
 
   static const String charity = BASE_URL + API + V + '/charity';
+  static const String profile = BASE_URL + API + V + '/user/me';
 }

@@ -1,4 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:need_give_core/core/app_constants.dart';
+import 'package:need_give_core/core/network/interceptors.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 Dio dio = Dio(
   BaseOptions(
@@ -15,10 +18,7 @@ void setBaseUrl(String baseUrl) {
   dio.options.baseUrl = baseUrl;
 }
 
-void setToken(String token) {
-  if (dio.options.headers.containsKey('token')) {
-    dio.options.headers.update('token', (value) => value = token);
-  } else {
-    dio.options.headers.addAll({'token': token});
-  }
+void initInterceptors() async{
+  var pref = await SharedPreferences.getInstance();
+  dio.interceptors.add(AuthInterceptor(pref));
 }
