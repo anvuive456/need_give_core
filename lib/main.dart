@@ -5,8 +5,8 @@ export 'package:need_give_core/core/network/rest_api.dart';
 
 
 ///model
-export 'package:need_give_core/core/base/model/phone.dart';
-export 'package:need_give_core/core/base/model/profile.dart';
-export 'package:need_give_core/core/base/model/request_model.dart';
-export 'package:need_give_core/core/base/model/sign_in.dart';
-export 'package:need_give_core/core/base/model/sign_up.dart';
+// export 'package:need_give_core/core/base/model/phone.dart';
+// export 'package:need_give_core/core/base/model/profile.dart';
+// export 'package:need_give_core/core/base/model/request_model.dart';
+// export 'package:need_give_core/core/base/model/sign_in.dart';
+// export 'package:need_give_core/core/base/model/sign_up.dart';
