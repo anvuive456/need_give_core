@@ -9,7 +9,8 @@ class ApiPath {
 
   //auth
   static const String sign_in = BASE_URL + API + V + '/auth/sign-in';
-  static const String sign_up = BASE_URL + API + V + '/auth/sign-up';
+  static const String sign_up_donor = BASE_URL + API + V + '/auth/donor/sign-up';
+  static const String sign_up_needer = BASE_URL + API + V + '/auth/needer/sign-up';
 
 
   //charity
