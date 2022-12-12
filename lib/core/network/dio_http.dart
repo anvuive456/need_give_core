@@ -28,8 +28,8 @@ void initInterceptors() async{
       }, onResponse: (Response response,ResponseInterceptorHandler handler) {
     return handler.next(response);
   }, onError: (DioError error,ErrorInterceptorHandler handler) async {
-    RequestOptions origin = error.response!.requestOptions;
-    if (error.response?.statusCode == 401) {
+    // RequestOptions origin = error.response!.requestOptions;
+    // if (error.response?.statusCode == 401) {
       // try {
       //   Response<dynamic> data = await dio.get("your_refresh_url");
       //   token = data.data['newToken'];
@@ -39,7 +39,7 @@ void initInterceptors() async{
       // } catch (err) {
       //   return err;
       // }
-    }
+    // }
     return handler.next(error);
   }));
 }
