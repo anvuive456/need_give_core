@@ -24,7 +24,7 @@ abstract class ListBaseResponse<T extends BaseModel> {
       this.page = 1,
       this.statusCode = 0});
 
-  ListBaseResponse fromJson(Map<String, dynamic> json);
+  // ListBaseResponse fromJson(Map<String, dynamic> json);
 
   Map<String, dynamic> toJson();
 }
