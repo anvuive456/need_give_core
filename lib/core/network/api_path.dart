@@ -28,6 +28,8 @@ class ApiPath {
   static String requestByUserId(int id) =>
       BASE_URL + API + V + '/user/${id}/request';
 
+  static const String requestForDonor = BASE_URL + API +V +'/donor/request';
+
   //user
   static const String update_profile = BASE_URL + API + V + '/user';
   static const String profile = BASE_URL + API + V + '/user/me';
