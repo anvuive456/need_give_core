@@ -19,6 +19,9 @@ class ApiPath {
       BASE_URL + API + V + '/user/${id}/charity';
   static const String charity = BASE_URL + API + V + '/charity';
 
+  static String charityByRequestId(int id)=>
+  BASE_URL + API +V +'/${id}/charity';
+
 
   //request
   static const String request = BASE_URL +API +V +'/request';
