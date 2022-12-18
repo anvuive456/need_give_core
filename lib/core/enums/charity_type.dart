@@ -1,6 +1,6 @@
 enum CharityType {
   money, //= 'money',
-  work, //= 'work',
+  // work, //= 'work',
   food, //= 'food',
   cloth, //= 'cloth',
   unknown;
@@ -13,8 +13,8 @@ enum CharityType {
         return 'Thức ăn';
       case CharityType.cloth:
         return 'Quần áo';
-      case CharityType.work:
-        return 'Công sức';
+      // case CharityType.work:
+      //   return 'Công sức';
       default:
         return '';
     }
@@ -28,8 +28,8 @@ enum CharityType {
         return 'food';
       case CharityType.cloth:
         return 'cloth';
-      case CharityType.work:
-        return 'work';
+      // case CharityType.work:
+      //   return 'work';
       default:
         return 'unknown';
     }
