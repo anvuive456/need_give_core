@@ -7,6 +7,8 @@ abstract class ListBaseResponse<T extends BaseModel> {
   final int totalPage;
   final int page;
   final int statusCode;
+  final int total;
+
 
   ListBaseResponse(
       {required this.data,
@@ -14,6 +16,7 @@ abstract class ListBaseResponse<T extends BaseModel> {
       required this.timeStamp,
       required this.totalPage,
       required this.page,
+        required this.total,
       required this.statusCode});
 
   const ListBaseResponse.empty(
@@ -22,6 +25,7 @@ abstract class ListBaseResponse<T extends BaseModel> {
       this.timeStamp = -1,
       this.totalPage = 0,
       this.page = 1,
+        this.total = 0,
       this.statusCode = 0});
 
   // ListBaseResponse fromJson(Map<String, dynamic> json);
