@@ -43,9 +43,11 @@ class Media {
     String? filePath,
     String? fileName,
     String? type,
+    int? id,
     int? fileSize,
   }) {
     return Media(
+      id: id?? this.id,
       filePath: filePath ?? this.filePath,
       type: type ?? this.type,
       fileName: fileName ?? this.fileName,
