@@ -12,7 +12,7 @@ class Media {
         fileSize: json['size']);
   }
   Map<String, dynamic> get toJson {
-    return {'dial_code': filePath, 'country': fileName, 'phone': fileSize};
+    return {'filePath': filePath, 'fileName': fileName, 'filePath': fileSize};
   }
 
   const Media.empty(

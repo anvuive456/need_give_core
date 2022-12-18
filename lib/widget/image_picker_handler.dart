@@ -52,7 +52,7 @@ class ImagePickerHandler {
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(16), topRight: Radius.circular(16)),
             ),
-            child:  Wrap(
+            child: Wrap(
               alignment: WrapAlignment.start,
               children: <Widget>[
                 Column(
@@ -70,7 +70,6 @@ class ImagePickerHandler {
                       ),
                       title: const Text(
                         'Chọn từ máy ảnh',
-
                       ),
                     ),
                     ListTile(
@@ -85,7 +84,7 @@ class ImagePickerHandler {
                         color: Colors.black,
                       ),
                       title: const Text(
-                       'Chọn từ thư viện',
+                        'Chọn từ thư viện',
                       ),
                     ),
                   ],
@@ -96,6 +95,65 @@ class ImagePickerHandler {
         });
   }
 
+  Future<void> showMultiImages(
+      BuildContext context,
+      {required Function(List<String>? images) onGallery,
+      required Function(String? image) onCamera}) async {
+    FocusScope.of(context).unfocus();
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+            padding: const EdgeInsets.only(
+              bottom: 40,
+            ),
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(16), topRight: Radius.circular(16)),
+            ),
+            child: Wrap(
+              alignment: WrapAlignment.start,
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    ListTile(
+                      onTap: () {
+                        Navigator.of(bc).pop();
+                        openCamera((file) {
+                          onCamera(file);
+                        });
+                      },
+                      leading: const Icon(
+                        Icons.photo_camera,
+                        color: Colors.black,
+                      ),
+                      title: const Text(
+                        'Chọn từ máy ảnh',
+                      ),
+                    ),
+                    ListTile(
+                      onTap: () {
+                        Navigator.of(bc).pop();
+                        chooseImagesFromGallery((file) {
+                          onGallery(file);
+                        });
+                      },
+                      leading: const Icon(
+                        Icons.image,
+                        color: Colors.black,
+                      ),
+                      title: const Text(
+                        'Chọn từ thư viện',
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          );
+        });
+  }
 }
 
 abstract class ImagePickerListener {
