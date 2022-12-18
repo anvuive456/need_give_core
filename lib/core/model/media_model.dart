@@ -12,7 +12,7 @@ class Media {
         fileSize: json['size']);
   }
   Map<String, dynamic> get toJson {
-    return {'filePath': filePath, 'fileName': fileName, 'filePath': fileSize};
+    return {'filePath': filePath, 'fileName': fileName, 'size': fileSize};
   }
 
   const Media.empty(
