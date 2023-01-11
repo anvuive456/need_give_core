@@ -1,8 +1,8 @@
 class ApiPath {
-  static const String BASE_URL =
-      'https://need-give-server.onrender.com'; //server
+  // static const String BASE_URL =
+  //     'https://need-give-server.onrender.com'; //server
   // static const String BASE_URL = 'https://www.needngive.site/'; //prod
-  // static const String BASE_URL = 'http://10.0.2.2:3000'; //local
+  static const String BASE_URL = 'http://localhost:8000'; //local
   static const String API = '/api';
 
   static const String V = '/v1';
