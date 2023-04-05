@@ -44,7 +44,7 @@ class DioHttpProvider {
       responseJson = _returnResponse(res);
     } on DioError catch (_) {
       debugPrint('$urlPath HAVING ERROR');
-      if(_.type == DioErrorType.connectTimeout) throw TimeOutException(message: 'Mất kết nối với internet');
+      if(_.type == DioErrorType.connectionTimeout) throw TimeOutException(message: 'Mất kết nối với internet');
         debugPrint('API ERRROR:${_.response!.data}');
       responseJson = _returnResponse(_.response!);
     }
@@ -141,7 +141,7 @@ class DioHttpProvider {
       responseJson = _returnResponse(res);
     } on DioError catch (_) {
       print(_.error);
-      if(_.type == DioErrorType.connectTimeout) throw TimeOutException(message: 'Mất kết nối với internet');
+      if(_.type == DioErrorType.connectionTimeout) throw TimeOutException(message: 'Mất kết nối với internet');
 
       debugPrint('$urlPath HAVING ERROR');
       debugPrint('API ERRROR:${_.response!.data}');

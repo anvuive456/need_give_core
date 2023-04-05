@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 Dio dio = Dio(
   BaseOptions(
-    connectTimeout: 5000,
+    connectTimeout: Duration(seconds: 5),
     headers: {
       'Accept': 'application/json',
       // 'content-type': 'application/json',

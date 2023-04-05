@@ -20,6 +20,6 @@ Depends on all your plugins, and provides a function to register them.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
   s.dependency 'Flutter'
   s.dependency 'image_picker_ios'
-  s.dependency 'path_provider_ios'
-  s.dependency 'shared_preferences_ios'
+  s.dependency 'path_provider_foundation'
+  s.dependency 'shared_preferences_foundation'
 end
